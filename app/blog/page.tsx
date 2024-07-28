@@ -19,10 +19,10 @@ export default async function Blog() {
 			<h1>BLOG PAGE</h1>
 			<ul className='flex flex-col gap-4'>
 				{posts &&
-					posts.map((item: any) => (
+					posts.map((item: any, index: number) => (
 						<Link href={`/blog/${item.id}`}>
 							<li
-								key={item.userId}
+								key={index}
 								className='text-3xl text-teal-600 shadow-2xl shadow-slate-700 h-[100px] p-4 hover:text-fuchsia-600'
 							>
 								{item.title}
