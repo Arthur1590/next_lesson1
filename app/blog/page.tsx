@@ -8,7 +8,7 @@ async function getData() {
 		},
 	})
 
-	if(!res.ok) throw new Error('Failed to fetch data')
+	if (!res.ok) throw new Error('Failed to fetch data')
 	return res.json()
 }
 
@@ -20,11 +20,8 @@ export default async function Blog() {
 			<ul className='flex flex-col gap-4'>
 				{posts &&
 					posts.map((item: any, index: number) => (
-						<Link href={`/blog/${item.id}`}>
-							<li
-								key={index}
-								className='text-3xl text-teal-600 shadow-2xl shadow-slate-700 h-[100px] p-4 hover:text-fuchsia-600'
-							>
+						<Link key={index} href={`/blog/${item.id}`}>
+							<li className='text-3xl text-teal-600 shadow-2xl shadow-slate-700 h-[100px] p-4 hover:text-fuchsia-600'>
 								{item.title}
 							</li>
 						</Link>
